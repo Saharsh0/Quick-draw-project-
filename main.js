@@ -5,14 +5,15 @@ randomNumber = Math.floor((Math.random()*quick_draw_data_set.length)+1);
 sketch = quick_draw_data_set[randomNumber];
 document.getElementById("sketch_name").innerHTML = "sketch to be drawn: "+sketch;
 
-timer_counter = 0
-timer_check =""
-drawn_sketch = ""
-answer_holder = ""
-score = 0
+timer_counter = 0;
+timer_check ="";
+drawn_sketch = "";
+answer_holder = "";
+score = 0;
 
 function updateCanvas()
 {
+     console.log("updatecanvas")
     background("white");
     randomNumber1 = Math.floor((Math.random()*quick_draw_data_set.length)+1);
     sketch = quick_draw_data_set[randomNumber1];
@@ -62,6 +63,7 @@ function gotResult(error, results) {
 
 function check_sketch()
 {
+    console.log("check_sketch")
     timer_counter++;
     document.getElementById('time').innerHTML='time: '+timer_counter;
     
@@ -71,7 +73,7 @@ function check_sketch()
         timer_check = "completed";
     }
 
-    if (timer_counter == "completed" || answer_holder == "set") {
+    if (timer_check == "completed" || answer_holder == "set") {
 
         timer_check = ""
         answer_holder = ""
